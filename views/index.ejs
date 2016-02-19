@@ -30,8 +30,8 @@
       <button id="add-job">Add a Job</button>
       <ul>
         <li class="job" ng-repeat="job in jobCtrl.jobs">
-        <h3><a href="#">{{ job.title }}</a></h3>
-        <p>at <strong></strong>, posted at 9:23am on February 19, 2016
+        <h3><a href="{{ job.link }}">{{ job.title }}</a></h3>
+        <p>at <strong>{{ job.company }}</strong>, posted at 9:23am on February 19, 2016
         <button class="upvote">Upvote</button>
         <button class="delete">Delete</button>
       </li>
