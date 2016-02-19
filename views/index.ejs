@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="JobOut" ng-controller="JobsController as jobCtrl">
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="/javascripts/app.js"</script>
+    <script src="/javascripts/jobsController.js"</script>
+
   </head>
   <body>
     <h1><%= title %></h1>
@@ -18,43 +24,22 @@
         <option value="company">Company</option>
       </select>
     </form>
-
+  {{2+2}}
     <section id="jobs-container">
+
       <button id="add-job">Add a Job</button>
       <ul>
         <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
-        <li class="job">
-          <h3><a href="#">Software Engineer</a></h3>
-          <p>at <strong>Acme Inc.</strong>, posted at 9:23am on February 19, 2016
-          <button class="upvote">Upvote</button>
-          <button class="delete">Delete</button>
-        </li>
+        <h3><a href="#">{{ jobCtrl.title }}</a></h3>
+        <p>at <strong></strong>, posted at 9:23am on February 19, 2016
+        <button class="upvote">Upvote</button>
+        <button class="delete">Delete</button>
+      </li>
+
       </ul>
       <button id="load-more">Load More</button>
     </section>
+
 
 
   </body>
