@@ -8,14 +8,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/jobsController.js"></script>
-
+    <script src="/javascripts/jobView.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
 
     <form action="">
-      <input type="search" id="search-title" placeholder="Search by Title">
-      <input type="search" id="search-company" placeholder="Search by Company">
+      <input type="search" id="search-title" placeholder="Search by Title" ng-model="query.title">
+      <input type="search" id="search-company" placeholder="Search by Company" ng-model="query.company">
       Sort by:
       <select id="sort">
         <option value="">Choose...</option>
@@ -26,21 +26,14 @@
     </form>
 
     <section id="jobs-container">
-
       <button id="add-job">Add a Job</button>
+      
       <ul>
-        <li class="job" ng-repeat="job in jobCtrl.jobs">
-        <h3><a href="{{ job.link }}">{{ job.title }}</a></h3>
-        <p>at <strong>{{ job.company }}</strong>, posted at 9:23am on February 19, 2016
-        <button class="upvote">Upvote</button>
-        <button class="delete">Delete</button>
-      </li>
-
+        <job></job>
       </ul>
-      <button id="load-more">Load More</button>
+
+      <button id="load-more" ng-click="loadMore()" >Load More</button>
     </section>
-
-
 
   </body>
 </html>
