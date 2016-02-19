@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.MONGO_JOBBED_OUT_CON);
+mongoose.connect(process.env.MONGO_JOBBED_OUT_CONN);
 
 app.use('/', routes);
 app.use('/api/v1/jobs', jobsApi);
