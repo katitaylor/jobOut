@@ -1,12 +1,11 @@
 (function() {
-  var app = angular.module('JobOut');
 
+ var app = angular.module('JobOut');
   app.controller('JobsController', function($http) {
+   var self = this;
 
-    var self = this;
-
-    $http({
-      method: 'GET',
+   $http({
+     method: 'GET',
       url: '/api/v1/jobs'
     }).then(function successCallback(response) {
       console.log('success', response.data.docs);
